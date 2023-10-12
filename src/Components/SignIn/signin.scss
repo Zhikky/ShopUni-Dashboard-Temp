@@ -81,14 +81,15 @@
         font-family: "Montserrat", sans-serif;
         font-size: 3em;
         font-weight: 700;
-        margin-bottom: 10px;
+        // margin-bottom: 10px;
+        color: #160857;
       }
 
       div {
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
-        margin-top: 10px;
+        margin-top: 20px;
         width: 100%;
         label {
           width: fit-content;
@@ -99,6 +100,52 @@
           border: none;
           border-radius: 10px;
           width: 100%;
+          padding: 0px 20px;
+        }
+      }
+
+
+      // Animation for login input element
+      .input_group {
+        position: relative;
+
+        // set input element style
+        .input_group_input {
+          font: inherit;
+          color: #ffffff;
+          outline: 2px solid #ffffff;
+          background-color: transparent;
+          transition: outline-color 500ms;
+        }
+
+
+        // set the outline color of the input element to chnage when the input is focused or valid (filled)
+        // note! code will only work if the input container is set to required, else the input element will the defaulty set to valid.
+        .input_group_input:is(:focus, :valid) {
+          outline-color: #160857;
+        }
+
+
+        // set label style
+        .input_group_label{
+          position: absolute;
+          top: 0;
+          left: 0;
+          translate: 10px 10px;
+          color: #ffffff;
+          transition: translate 500ms, scale 500ms;
+        }
+
+
+        // finally, add transition to complete effects.
+        .input_group_input:focus +
+        .input_group_label,
+        .input_group_input:valid + 
+        .input_group_label{
+          padding-inline: 5px;
+          translate: 10px -14px;
+          scale: 0.8;
+          background-color: #286feb;
         }
       }
 

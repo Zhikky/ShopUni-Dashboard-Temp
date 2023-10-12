@@ -15,13 +15,13 @@ function SignIn() {
             <div>
                 <form>
                     <h2>Sign In</h2>
-                    <div>
-                        <label>Username</label>
-                        <input type="text" />
+                    <div className="input_group">
+                        <input type="text" id="username" className="input_group_input" required />
+                        <label htmlFor="username" className="input_group_label">Username</label>
                     </div>
-                    <div>
-                        <label>Password</label>
-                        <input type="text" />
+                    <div className="input_group">
+                        <input type="password" id="password" className="input_group_input" required />
+                        <label htmlFor="password" className="input_group_label">Password</label>
                     </div>
                     <button>Sign In</button>
                 </form>
