@@ -1,0 +1,25 @@
+.dashboard_container {
+  width: auto;
+  height: 100%;
+  padding: 1em;
+  // background-color: red;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .dashboard {
+    width: 100%;
+    margin-left: 1em ;
+    height: calc(100vh - 2em);
+    background-color: #dadada;
+    border-radius: 10px;
+
+    div:nth-child(1){
+        h2{
+            font-family: "Hind Siliguri", sans-serif;
+            font-weight: 400;
+            font-size: 2em;
+        }
+    }
+  }
+}
