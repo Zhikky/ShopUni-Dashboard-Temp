@@ -1,6 +1,7 @@
 import React from "react";
 import "./dashboard.scss";
 import SideBar from "./Sidebar/sidebar";
+import Header from "./header/header";
 import logoIcon from "./images/zhikky.jpg"
 
 function Dashboard() {
@@ -60,6 +61,7 @@ function Dashboard() {
             <><SideBar /></>
 
             <div className="dashboard">
+                <div><Header /></div>
 
             </div>
         </div>
