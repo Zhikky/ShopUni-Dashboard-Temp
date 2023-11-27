@@ -1,13 +1,15 @@
 .header_container {
   display: flex;
-  width: calc((100vw - 300px) - 6em);
+  width: calc((100vw - 250px) - 6em);
   height: 100px;
   // background-color: red;
   display: flex;
   justify-content: space-between;
   align-items: center;
 
-  > div:nth-child(1) {
+  > .text {
+    display: flex;
+    flex-direction: column;
     text-align: left;
     color: #ffffff;
 
@@ -16,6 +18,109 @@
 
       > span {
         color: #160857;
+      }
+    }
+  }
+
+  > div {
+    display: flex;
+
+    > .search {
+      position: relative;
+      display: flex;
+      // justify-content: center;
+      align-items: center;
+      border-right: 1px solid #ffffff;
+      padding: 0.4em 1.3em 0.4em 0px;
+      margin-right: 1.3em;
+
+      > div:nth-child(1) {
+        margin-right: 1.3em;
+
+        input {
+          padding: 0.5em 1em 0.5em 3em;
+          width: 240px;
+          height: 35px;
+          border-radius: 5px;
+          border: none;
+
+          &:hover {
+            cursor: pointer;
+          }
+
+          &::placeholder {
+            color: #160857;
+            font-size: 1.1em;
+          }
+        }
+
+        .fa-solid.fa-magnifying-glass {
+          position: absolute;
+          top: 50%;
+          left: 1em;
+          transform: translateY(-50%);
+        }
+      }
+
+      > div:nth-child(2) {
+        background-color: #160857;
+        padding: 1em;
+        width: 0.65em;
+        height: 0.65em;
+        border-radius: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .fa-bell {
+          color: #ffffff;
+          font-size: 1.1em;
+          font-weight: 100;
+        }
+      }
+    }
+
+    > .profile {
+      display: flex;
+      align-items: center;
+
+      > .img {
+        min-width: 3.5em;
+        height: 3.5em;
+        border-radius: 100%;
+        margin-right: 1.3em;
+        background-size: cover;
+        background-position: center;
+      }
+
+      > div:nth-child(2) {
+        color: #ffffff;
+        text-align: left;
+        width: max-content;
+
+        > p {
+          font-size: 0.7em;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1194px) {
+  .header_container {
+    font-size: 14px;
+
+    > .text {
+      min-width: 200px;
+      h2 {
+        display: flex;
+        flex-direction: column;
+        > span {
+          display: none;
+          font-size: 1.2em;
+          line-height: 0.8em;
+          margin-bottom: 0.2em;
+        }
       }
     }
   }

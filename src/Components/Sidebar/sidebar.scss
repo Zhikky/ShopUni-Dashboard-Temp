@@ -1,15 +1,16 @@
 .sidebar_container {
-  width: 300px;
+  width: calc(250px - 1em);
   height: 100%;
   flex-grow: 1;
   background-color: #160857;
-  padding: 2em 0;
+  padding: 2em 1em 2em 0;
   display: flex;
   flex-direction: column;
   align-items: flex-end;
   color: white;
   z-index: 1;
   position: fixed;
+  font-size: 16px;
 
   &::after {
     content: "";
