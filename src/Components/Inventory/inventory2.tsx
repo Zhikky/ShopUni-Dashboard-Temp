@@ -27,6 +27,7 @@ const Inventory2: React.FC<InventoryProps> = ({ productData }) => {
     }]
     })
 
+    
     return (
         <div className="inventory_dashboard">
             <div>

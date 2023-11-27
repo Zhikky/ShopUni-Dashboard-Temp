@@ -101,7 +101,6 @@ function Dashboard() {
                 <div>
                     <Inventory2 productData={productData} />
                     <Inventory1 productData={productData} />
-
                 </div>
             </div>
         </div>

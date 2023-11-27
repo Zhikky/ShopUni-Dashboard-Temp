@@ -5,9 +5,9 @@ import { Chart as chartjs, scales } from "chart.js/auto";
 
 function BarChart({ userData }) {
   const options = {
-    // indexAxis: "y",
+    indexAxis: "y",
     scales: {
-      y: {
+      x: {
         beginAtZero: true,
         title: {
           display: true,
@@ -15,19 +15,19 @@ function BarChart({ userData }) {
         },
       },
 
-      x: {
+      y: {
         title: {
           display: true,
           text: "(Initial Quanity) Products", // Y-axis label
           //   color: "white",
           font: {
-            weight: "bold",
-            size: 16
+            // weight: "bold",
+            size: 14
           },
         },
         ticks: {
             font: {
-                size: 14
+                size: 12
             }
         }
       },
