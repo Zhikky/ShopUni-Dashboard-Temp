@@ -1,9 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 import "./signup.scss";
 
 import icon from "../images/FAvicon.png"
 
 function SignUp() {
+
+    const [showPassword, setShowPassword] = useState(false);
+
+    const handleTogglePassword = () => {
+        setShowPassword(!showPassword);
+    };
 
     const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault(); // Prevents the default form submission behavior
@@ -13,7 +19,7 @@ function SignUp() {
         <div className="signup_container">
 
             <div className="sign_icon">
-                <img src={icon} alt="ShopUnI Icon" width="120px" />
+                <img src={icon} alt="ShopUnI Icon"/>
             </div>
 
             <div className="signup">
@@ -24,9 +30,13 @@ function SignUp() {
                         <label htmlFor="email">Enter Email</label>
                         <input type="email" placeholder="Email" name="email" />
                     </div>
-                    <div>
+                    <div className="signup_passowrd"> 
                         <label htmlFor="password">Enter Password</label>
-                        <input type="password" placeholder="Password" name="password" />
+                        <input type={showPassword ? 'text' : 'password'} placeholder="Password" name="password" />
+                        <i className={`fa-solid password-toggle-icon ${showPassword ? "fa-eye" : "fa-eye-slash"}`}
+                            onClick={handleTogglePassword}
+                        >
+                        </i>
                     </div>
 
                     <button>Next</button>

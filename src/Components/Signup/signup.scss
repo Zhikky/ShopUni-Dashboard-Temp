@@ -16,19 +16,26 @@ $align-items: center;
 
 .signup_container {
   width: 100vw;
-  height: 100vh;
+  min-height: 1064px;
   background-color: $Signup-background;
-  @include flexCenter;
+  display: flex;
+  align-items: center;
   flex-direction: column;
   font-family: $font-family;
 
   > .sign_icon {
-    margin-bottom: 25px;
+    margin-bottom: 1.56em;
+    margin-top: 6.25em;
+
+    img {
+      width: 7.5em;
+      height: 100%;
+    }
   }
 
   > .signup {
     min-width: 680px;
-    height: 550px;
+    height: 34.375em;
     background-color: #fff;
     border-radius: 16px;
     display: flex;
@@ -46,7 +53,23 @@ $align-items: center;
 
     form {
       width: 60%;
-      margin-bottom: 18px;
+      margin-bottom: 1.125;
+
+      .signup_passowrd {
+        position: relative;
+
+        .password-toggle-icon {
+          position: absolute;
+          top: 60%;
+          right: 1em;
+          font-size: 1em;
+          color: $black-text;
+
+          &:hover {
+            cursor: pointer;
+          }
+        }
+      }
 
       > div {
         display: flex;
@@ -54,7 +77,7 @@ $align-items: center;
         justify-content: space-between;
         flex-direction: column;
         width: 100%;
-        margin-bottom: 24px;
+        margin-bottom: 1.5em;
 
         label {
           font-family: $font-family;
@@ -96,7 +119,7 @@ $align-items: center;
       }
 
       > div:nth-child(4) {
-        margin-top: 14px;
+        margin-top: 1.125em;
         width: 100%;
         align-items: center;
         > p {
@@ -114,6 +137,46 @@ $align-items: center;
             cursor: pointer;
             text-decoration: underline;
           }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .signup_container {
+    background-color: #fff;
+
+    > .signup {
+      min-width: 100%;
+
+      form {
+        width: 70%;
+
+        > div:nth-child(4) {
+          margin-top: 1.125em;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .signup_container {
+    font-size: 12px;
+    min-height: 820px;
+    @include flexCenter;
+
+    > .sign_icon {
+    margin-top: 0;
+  }
+
+    > .signup {
+      form {
+        width: 75%;
+
+        > div:nth-child(4){
+          font-size: 1.1em;
         }
       }
     }
