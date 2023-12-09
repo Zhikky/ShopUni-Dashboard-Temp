@@ -1,30 +1,46 @@
+@import "../variable.scss";
+
 .inventory_dashboard {
   max-width: 100%;
   height: auto;
   overflow: hidden; /* Hide content that overflows */
   position: relative;
   border-radius: 8px;
-  background-color: #160857bd;
+  background-color: #fff;
+  // background-color: transparent;
   padding: 0.85em;
 
   > div:nth-child(1) {
     width: 100%;
-    height: 2.15em;
+    // height: 2.15em;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding-bottom: 8px;
     margin-bottom: 8px;
-    border-bottom: 1px solid #6c757d;
+    // border-bottom: 1px solid #6c757d;
 
-    > p {
-      color: white;
-      font-weight: 600;
+    > .dashboard_search {
+      position: relative;
+
+      i {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        left: 16px;
+      }
+      input {
+        padding: 12px 24px 12px 48px;
+        border: none;
+        border-radius: 4px;
+        width: 250px;
+        border: 1px solid rgba(0, 0, 0, 0.2);
+      }
     }
 
     > button {
-      padding: 6px 12px;
-      background-color: #22b2f2;
+      padding: 8px 24px;
+      background-color: $blue-text;
       border: none;
       border-radius: 4px;
       display: flex;
@@ -32,15 +48,16 @@
       align-items: center;
       font-weight: 500;
       transition: all 0.1s ease-in-out;
-      i {
-        margin-right: 5px;
+      color: #fff;
+      svg {
+        margin-right: 12px;
       }
 
       &:hover {
         cursor: pointer;
         // transform: scale(1.05);
       }
-      &:active{
+      &:active {
         transform: scale(0.97);
       }
     }
@@ -50,99 +67,122 @@
     white-space: nowrap; /* Prevents text wrapping */
     overflow-x: auto;
     overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    -webkit-overflow-scrolling: touch;
-
     width: 100%;
-    height: calc(100% - (2.5em + 16px));
+    height: auto;
     > table {
-      color: white;
       width: 100%;
       height: auto;
-      border-collapse: collapse;
-      
-      > thead{
-        height: 3em;
-      }
+      border-spacing: 0;
+      border-radius: 8px;
+      color: $black-text;
+      font-family: $font-family;
 
-      > tbody{
+      > thead {
+        height: 4.05em;
+        background-color: #efeeee;
 
-        #custom-row{
-          height: 3em;
+        th {
+          font-weight: 400;
+          font-size: 15px;
         }
-      }
-
-      tr {
-        width: 100%;
-
-        th,
-        td {
-          min-width: fit-content;
-          font-size: 12px;
-        }
-      }
-
-      thead{
-        background-color: #2870eb5e;
         th:first-child {
-          border-top-left-radius: 5px;
-          border-bottom-left-radius: 5px;
+          border-top-left-radius: 8px;
+          // border-bottom-left-radius: 8px;
         }
 
-        th:last-child{
-          border-top-right-radius: 5px;
-          border-bottom-right-radius: 5px;
-        }
-      }
-
-      tr:nth-child(even) {
-        background-color: #2870eb5e;
-        
-        td:first-child {
-          border-top-left-radius: 5px;
-          border-bottom-left-radius: 5px;
-        }
-
-        td:last-child {
-          border-top-right-radius: 5px;
-          border-bottom-right-radius: 5px;
-        }
-      }
-    }
-
-    > .pagination_dashboard{
-      display: flex;
-      justify-content: flex-end;
-      align-self: flex-end;
-
-      > button{
-        background-color: transparent;
-        border: none;
-        color: rgba(255, 255, 255, 0.591);
-        padding: 0.5em;
-        &:hover{
-          cursor: pointer;
+        th:last-child {
+          border-top-right-radius: 8px;
+          // border-bottom-right-radius: 8px;
         }
       }
 
-      .active{
-        color: #ffffff;
+      td {
+        min-width: 130px;
       }
+      tbody {
+        tr {
+          height: 4.35em;
+          width: 100%;
+          td {
+            font-size: 15px;
+            border-bottom: 1px solid #efeeee;
+            align-items: center;
 
-      .fa-chevron-right, .fa-chevron-left{
-        background-color: #22b2f2;
-        color: black;
-        padding:0.5em;
-        border-radius: 5px;
+            button {
+              // border: none;
+              background-color: transparent;
+            }
+          }
+
+          td:nth-child(1) {
+            border-left: 1px solid #efeeee;
+          }
+
+          td:last-child {
+            border-right: 1px solid #efeeee;
+          }
+        }
+
+        tr:last-child td:first-child {
+          border-bottom-left-radius: 8px;
+        }
+
+        tr:last-child td:last-child {
+          border-bottom-right-radius: 8px;
+        }
       }
     }
   }
 
-  > .barchart{
-    color: white; 
-    height: 400px;
-    // width: 400px;
+  > .pagination_dashboard {
+    display: flex;
+    justify-content: flex-end;
+    align-self: flex-end;
+    margin-top: 0.6em;
+
+    > button {
+      background-color: transparent;
+      border: none;
+      color: $black-text;
+      padding: 0.5em;
+      &:hover {
+        cursor: pointer;
+      }
+    }
+
+    .active {
+      color: rgba(0, 0, 0, 0.5);
+    }
+
+    .fa-chevron-right,
+    .fa-chevron-left {
+      background-color: $blue-text;
+      color: #fff;
+      padding: 0.5em;
+      border-radius: 5px;
+    }
   }
+
+  > .chart {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .barchart {
+      color: $black-text;
+      width: 46%;
+      height: auto;
+      background-color: #fff;
+      padding: 1em 1em 0px 0px ;
+      border-radius: 10px;
+    }
+  }
+}
+
+.chart_container{
+  background-color: #efeeee;
+  padding: 0.85em 0px ;
 }

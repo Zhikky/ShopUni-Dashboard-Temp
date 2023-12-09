@@ -1,0 +1,16 @@
+$Signup-background: rgb(40, 111, 235, 10%);
+$black-text: #191919;
+$blue-text: #286feb;
+$font-family: Hind Siliguri, sans-serif;
+
+// Define variables for each property
+$flex-display: flex;
+$justify-content: center;
+$align-items: center;
+
+// Create a mixin to apply these properties
+@mixin flexCenter {
+  display: $flex-display;
+  justify-content: $justify-content;
+  align-items: $align-items;
+}

@@ -1,9 +1,9 @@
 import React from "react";
 
-import { Bar } from "react-chartjs-2";
+import { Line } from "react-chartjs-2";
 import { Chart as chartjs, scales } from "chart.js/auto";
 
-function BarChart({ userData }) {
+function LineChart({ userData }) {
   const options = {
     // indexAxis: "y",
     scales: {
@@ -12,7 +12,7 @@ function BarChart({ userData }) {
         title: {
           display: true,
           text: "Amount Sold",
-          // color: "191919",
+        //   color: "191919",
         },
         ticks: {
           color: "#969696",
@@ -23,9 +23,9 @@ function BarChart({ userData }) {
         title: {
           display: true,
           text: "(Initial Quanity) Products", // Y-axis label
-          // color: "191919",
+        //   color: "191919",
           font: {
-            weight: "bold",
+            // weight: "bold",
             size: 14,
           },
         },
@@ -47,7 +47,7 @@ function BarChart({ userData }) {
     },
   };
 
-  return <Bar data={userData} options={options} />;
+  return <Line data={userData} options={options} />;
 }
 
-export default BarChart;
+export default LineChart;

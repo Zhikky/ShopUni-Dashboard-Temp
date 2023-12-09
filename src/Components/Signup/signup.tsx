@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "../sign.scss";
 import "./signup.scss";
 
 import icon from "../images/FAvicon.png"
@@ -16,34 +17,26 @@ function SignUp() {
         // Any additional logic can be added here if needed
     };
     return (
-        <div className="signup_container">
+        <div className="sign_container">
 
             <div className="sign_icon">
-                <img src={icon} alt="ShopUnI Icon"/>
+                <img src={icon} alt="ShopUnI Icon" />
             </div>
 
-            <div className="signup">
-                <h1>Login to your Account</h1>
+
+            {/* The class name Sign and other classnames have their scss designs in the "sign.scss" directory while the class name "sign_up" has its related deisgns in the signup.scss directory */}
+            <div className="sign sign_up">
+                <h1>Sign up</h1>
 
                 <form onSubmit={handleSubmit}>
                     <div>
                         <label htmlFor="email">Enter Email</label>
                         <input type="email" placeholder="Email" name="email" />
                     </div>
-                    <div className="signup_passowrd"> 
-                        <label htmlFor="password">Enter Password</label>
-                        <input type={showPassword ? 'text' : 'password'} placeholder="Password" name="password" />
-                        <i className={`fa-solid password-toggle-icon ${showPassword ? "fa-eye" : "fa-eye-slash"}`}
-                            onClick={handleTogglePassword}
-                        >
-                        </i>
-                    </div>
+                    <button>Send Code</button>
 
-                    <button>Next</button>
-
-                    <div>
-                        <p>New here?  <a href="#" target="_blank" >Sign up now</a></p>
-                        <a href="#" target="_blank" >Forgot Password?</a>
+                    <div className="form_bottom_links">
+                        <p>Already have an account?  <a href="#" target="_blank" >login here</a></p>
                     </div>
                 </form>
 

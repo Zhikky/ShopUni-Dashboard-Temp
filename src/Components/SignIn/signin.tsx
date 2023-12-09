@@ -1,34 +1,58 @@
-import React from "react";
+import React, { useState } from "react";
+import "../sign.scss";
 import "./signin.scss";
 
-function SignIn() {
+import icon from "../images/FAvicon.png"
+
+function SignUp() {
+
+    const [showPassword, setShowPassword] = useState(false);
+
+    const handleTogglePassword = () => {
+        setShowPassword(!showPassword);
+    };
+
+    const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+        event.preventDefault(); // Prevents the default form submission behavior
+        // Any additional logic can be added here if needed
+    };
     return (
-        <div className="signin_container">
-            <div>
-                <div className="signin_text">
-                    <h1>ShopUnI</h1>
-                    <p>Welcome to ShopUnI. A cutting edge e-commerce platform that aims to connect vendors to customers within the university environment. We create a virtual shopping mall for the plethora of products retailed by university students, while ensuring top quality and maintaining customer trust.</p>
-                    <p>Our vision is to create a dynamic ecosystem within university environments, where the exchange of goods not only simplifies student life, but also nurtures a sense of unity and collaboration among both buyers and sellers. Are you a vendor? Register now!</p>
-                    <button>Sign Up</button>
-                </div>
+        <div className="sign_container">
+
+            <div className="sign_icon">
+                <img src={icon} alt="ShopUnI Icon" />
             </div>
-            <div>
-                <form>
-                    <h2>Sign In</h2>
-                    <div className="input_group">
-                        <input type="text" id="username" className="input_group_input" required />
-                        <label htmlFor="username" className="input_group_label">Username</label>
+
+            {/* The class name Sign and other classnames have their scss designs in the "sign.scss" directory while the class name "sign_in" has its related deisgns in the signin.scss directory */}
+            <div className="sign sign_in">
+                <h1>Login to your Account</h1>
+
+                <form onSubmit={handleSubmit}>
+                    <div>
+                        <label htmlFor="email">Enter Email</label>
+                        <input type="email" placeholder="Email" name="email" />
                     </div>
-                    <div className="input_group">
-                        <input type="password" id="password" className="input_group_input" required />
-                        <label htmlFor="password" className="input_group_label">Password</label>
+                    <div className="sign_passowrd">
+                        <label htmlFor="password">Enter Password</label>
+                        <input type={showPassword ? 'text' : 'password'} placeholder="Password" name="password" />
+                        <i className={`fa-solid password-toggle-icon ${showPassword ? "fa-eye" : "fa-eye-slash"}`}
+                            onClick={handleTogglePassword}
+                        >
+                        </i>
                     </div>
-                    <button>Sign In</button>
+
+                    <button>Next</button>
+
+                    <div className="form_bottom_links">
+                        <p>New here?  <a href="#" target="_blank" >Sign up now</a></p>
+                        <a href="#" target="_blank" >Forgot Password?</a>
+                    </div>
                 </form>
-                <div></div>
+
+
             </div>
         </div>
     )
 };
 
-export default SignIn;
+export default SignUp;

@@ -1,184 +1,26 @@
-$Signup-background: rgb(40, 111, 235, 10%);
-$black-text: #191919;
-$font-family: Hind Siliguri, sans-serif;
+.sign_up {
+  height: 34.375em;
+  justify-content: center;
 
-// Define variables for each property
-$flex-display: flex;
-$justify-content: center;
-$align-items: center;
-
-// Create a mixin to apply these properties
-@mixin flexCenter {
-  display: $flex-display;
-  justify-content: $justify-content;
-  align-items: $align-items;
-}
-
-.signup_container {
-  width: 100vw;
-  min-height: 1064px;
-  background-color: $Signup-background;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  font-family: $font-family;
-
-  > .sign_icon {
-    margin-bottom: 1.56em;
-    margin-top: 6.25em;
-
-    img {
-      width: 7.5em;
-      height: 100%;
-    }
+  > h1 {
+    padding-bottom: 2em;
   }
+}
+@media (max-width: 768px) {
 
-  > .signup {
-    min-width: 680px;
-    height: 34.375em;
-    background-color: #fff;
-    border-radius: 16px;
-    display: flex;
-    flex-direction: column;
+    .sign_container {
+        justify-content: center;
+
+        > .sign_icon{
+            margin-top: 0;
+        }
+  }
+  .sign_up {
     justify-content: space-evenly;
-    align-items: center;
-    flex-direction: column;
+    height: auto;
 
     h1 {
-      color: $black-text;
-      text-align: center;
-      font-family: $font-family;
-      font-size: 1.8em;
-    }
-
-    form {
-      width: 60%;
-      margin-bottom: 1.125;
-
-      .signup_passowrd {
-        position: relative;
-
-        .password-toggle-icon {
-          position: absolute;
-          top: 60%;
-          right: 1em;
-          font-size: 1em;
-          color: $black-text;
-
-          &:hover {
-            cursor: pointer;
-          }
-        }
-      }
-
-      > div {
-        display: flex;
-        align-items: flex-start;
-        justify-content: space-between;
-        flex-direction: column;
-        width: 100%;
-        margin-bottom: 1.5em;
-
-        label {
-          font-family: $font-family;
-          font-size: 1em;
-          font-weight: 700;
-          color: $black-text;
-          margin-bottom: 6px;
-        }
-
-        input {
-          width: calc(100% - 2em);
-          padding: 1em;
-          border-radius: 6px;
-          border: 1px solid var(--greyscale-100, #ebebeb);
-        }
-      }
-
-      button {
-        width: 100%;
-        height: 56px;
-        padding: 0.5em 0;
-        border-radius: 12px;
-        background: #286feb;
-        border: none;
-        color: #fff;
-        font-weight: 700;
-        font-size: 1em;
-        // margin-top: 1em;
-        transition: 0.3s all ease-in-out;
-
-        &:hover {
-          cursor: pointer;
-          transform: scale(1.05);
-        }
-
-        &:active {
-          transform: scale(1);
-        }
-      }
-
-      > div:nth-child(4) {
-        margin-top: 1.125em;
-        width: 100%;
-        align-items: center;
-        > p {
-          a {
-            color: #286feb;
-          }
-        }
-
-        a {
-          color: $black-text;
-          text-decoration: none;
-          transition: 0.5s all ease-in-out;
-
-          &:hover {
-            cursor: pointer;
-            text-decoration: underline;
-          }
-        }
-      }
-    }
-  }
-}
-
-@media (max-width: 768px) {
-  .signup_container {
-    background-color: #fff;
-
-    > .signup {
-      min-width: 100%;
-
-      form {
-        width: 70%;
-
-        > div:nth-child(4) {
-          margin-top: 1.125em;
-        }
-      }
-    }
-  }
-}
-
-@media (max-width: 600px) {
-  .signup_container {
-    font-size: 12px;
-    min-height: 820px;
-    @include flexCenter;
-
-    > .sign_icon {
-    margin-top: 0;
-  }
-
-    > .signup {
-      form {
-        width: 75%;
-
-        > div:nth-child(4){
-          font-size: 1.1em;
-        }
-      }
+      padding: 11px 0px 35px 0px;
     }
   }
 }

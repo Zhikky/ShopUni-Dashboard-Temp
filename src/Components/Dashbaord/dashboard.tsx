@@ -1,9 +1,10 @@
 import React from "react";
 import "./dashboard.scss";
-import SideBar from "./Sidebar/sidebar";
-import Header from "./header/header";
-import Inventory1 from "./Inventory/inventory1";
-import Inventory2 from "./Inventory/inventory2";
+import SideBar from "../Sidebar/sidebar";
+import Header from "../header/header";
+import Inventory2 from "../Inventory/Dasboard-charts";
+import Inventory1 from "../Inventory/Dashboard-table";
+import Navbar from "../Navbar/navbar";
 
 // import logoIcon from "./images/zhikky.jpg"
 
@@ -11,14 +12,14 @@ function Dashboard() {
 
     const productData = [
         {
-            product: "spoon",
+            product: "Spoon",
             qunatity: 13,
             entry_price: "#7,683",
             exit_price: "#9,542",
             image: "https://media.istockphoto.com/id/680359656/photo/red-gas-cylinder-isolated.jpg?s=612x612&w=0&k=20&c=rkfyxyuNgcc4q4HUgtA_y1gc63cHGzJjVFNfNt3I3Lw=",
             sold: 4,
         }, {
-            product: "sock",
+            product: "Sock",
             qunatity: 15,
             entry_price: "#7,683",
             exit_price: "#9,542",
@@ -26,7 +27,7 @@ function Dashboard() {
             sold: 9,
         },
         {
-            product: "belt",
+            product: "Belt",
             qunatity: 32,
             entry_price: "#7,683",
             exit_price: "#9,542",
@@ -41,7 +42,7 @@ function Dashboard() {
             sold: 2,
         },
         {
-            product: "jean",
+            product: "Jean",
             qunatity: 3,
             entry_price: "#7,683",
             exit_price: "#9,542",
@@ -73,7 +74,7 @@ function Dashboard() {
             sold: 9,
         },
         {
-            product: "jean",
+            product: "Jean",
             qunatity: 3,
             entry_price: "#7,683",
             exit_price: "#9,542",
@@ -97,6 +98,8 @@ function Dashboard() {
 
             <div className="dashboard">
                 <div><Header /></div>
+                
+                <Navbar />
 
                 <div>
                     <Inventory2 productData={productData} />
